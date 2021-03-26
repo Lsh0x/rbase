@@ -11,8 +11,15 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Checkout Repository
-              uses: actions/checkout@v1
+            - name: Extract branch name
+              shell: bash
+              run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+              id: extract_branch
+      
+            - name: Checkout
+              uses: actions/checkout@v2
+              with:
+                ref: ${{ steps.extract_branch.outputs.branch }} 
 
             - name: Install Rust toolchain
               uses: actions-rs/toolchain@v1
@@ -32,6 +39,5 @@ jobs:
               uses: peaceiris/actions-gh-pages@v3
               with:
                 deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-                publish_branch: gh-pages
-                publish_dir: ./target/doc
+                publish_dir: ./public/doc
                 keep_files: true
