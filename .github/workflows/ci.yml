@@ -4,7 +4,7 @@ on: push
 
 jobs:
   build:
-    name: Build CI
+    name: Build
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -12,8 +12,15 @@ jobs:
         rust: [nightly, beta, stable]
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@master
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ steps.extract_branch.outputs.branch }} 
 
       - name: Install Rust toolchain ${{ matrix.rust }}
         uses: actions-rs/toolchain@v1
@@ -22,6 +29,28 @@ jobs:
           toolchain:  ${{ matrix.rust }}
           components: rustfmt, clippy
           override: true
+
+      - name: Build
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+
+      - name: Test
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+
+      - name: Clippy
+        uses: actions-rs/cargo@v1
+        with:
+          command: clippy
+          args: -- -D warnings
+
+      - name: Format
+        uses: actions-rs/cargo@v1
+        with:
+          command: fmt
+          args: --all -- --check
 
       - name: Cache cargo registry
         uses: actions/cache@v1
@@ -41,19 +70,4 @@ jobs:
           path: target
           key: ${{ matrix.os }}-${{ matrix.rust }}-cargo-build-target-${{ hashFiles('**/Cargo.toml') }}-${{ secrets.CACHE_VERSION }}
 
-      - name: Cargo Test For All Features Using async-std
-        uses: actions-rs/cargo@v1
-        with:
-          command: test
 
-      - name: Clippy warnings
-        uses: actions-rs/cargo@v1
-        with:
-          command: clippy
-          args: -- -D warnings
-
-      - name: Cargo Fmt Check
-        uses: actions-rs/cargo@v1
-        with:
-          command: fmt
-          args: --all -- --check
