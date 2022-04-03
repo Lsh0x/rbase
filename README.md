@@ -7,3 +7,10 @@ Rust setup for new project
 [![Docs](https://docs.rs/rbase/badge.svg)](https://docs.rs/rbase)
 [![Crates.io](https://img.shields.io/crates/v/rbase.svg)](https://crates.io/crates/rbase)
 [![crates.io](https://img.shields.io/crates/d/rbase)](https://crates.io/crates/rbase)
+
+
+### Adapt to your project 
+
+- [ ] Change rbase name in README to match your project for the badges
+- [ ] Update Cargo.toml description and project name
+- [ ] Create a production environment in github and add variable `CARGO_REGISTRY_TOKEN`
