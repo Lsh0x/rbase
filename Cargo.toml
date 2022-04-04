@@ -2,8 +2,9 @@
 name = "rbase"
 version = "0.1.0"
 authors = ["LSH <github@lsh.tech>"]
-edition = "2018"
+edition = "2021"
+description = "Github template to setup the CI and cargo publish"
+license = "GPL-3.0"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
