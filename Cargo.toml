@@ -1,6 +1,6 @@
 [package]
 name = "rbase"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["LSH <github@lsh.tech>"]
 edition = "2021"
 description = "Github template to setup the CI and cargo publish"
