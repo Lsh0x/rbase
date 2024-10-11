@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- fix: github action coverage workflow [\#4](https://github.com/Lsh0x/rbase/pull/4) ([Lsh0x](https://github.com/Lsh0x))
 - Fix/transform template into lib [\#3](https://github.com/Lsh0x/rbase/pull/3) ([Lsh0x](https://github.com/Lsh0x))
 - feat: update github workflow for changelog [\#2](https://github.com/Lsh0x/rbase/pull/2) ([Lsh0x](https://github.com/Lsh0x))
 - feat: updates to 2022 [\#1](https://github.com/Lsh0x/rbase/pull/1) ([Lsh0x](https://github.com/Lsh0x))
