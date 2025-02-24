@@ -14,3 +14,4 @@ Rust setup for new project
 - [ ] Change rbase name in README to match your project for the badges
 - [ ] Update Cargo.toml description and project name
 - [ ] Create a production environment in github and add variable `CARGO_REGISTRY_TOKEN`
+- [ ] Create a production environment in github and add variable `CODECOV_TOKEN`
