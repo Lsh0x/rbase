@@ -1,4 +1,4 @@
-name: Rust Coverage
+name: Rust Test & Coverage
 
 on:
   push:
@@ -43,4 +43,5 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: lcov.info
-          fail_ci_if_error: true
+          fail_ci_if_error: false
+          verbose: true
