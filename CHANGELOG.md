@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- .feat: update codecove version [\#14](https://github.com/Lsh0x/rbase/pull/14) ([Lsh0x](https://github.com/Lsh0x))
 - feat: rework codecov workflow [\#13](https://github.com/Lsh0x/rbase/pull/13) ([Lsh0x](https://github.com/Lsh0x))
 - feat: rework codecov workflow [\#12](https://github.com/Lsh0x/rbase/pull/12) ([Lsh0x](https://github.com/Lsh0x))
 - fix: libsso prob du latest ubuntu [\#11](https://github.com/Lsh0x/rbase/pull/11) ([Lsh0x](https://github.com/Lsh0x))
