@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- fix: cron for sync template [\#16](https://github.com/Lsh0x/rbase/pull/16) ([Lsh0x](https://github.com/Lsh0x))
 - feat: add workflow to sync template [\#15](https://github.com/Lsh0x/rbase/pull/15) ([Lsh0x](https://github.com/Lsh0x))
 - .feat: update codecove version [\#14](https://github.com/Lsh0x/rbase/pull/14) ([Lsh0x](https://github.com/Lsh0x))
 - feat: rework codecov workflow [\#13](https://github.com/Lsh0x/rbase/pull/13) ([Lsh0x](https://github.com/Lsh0x))
